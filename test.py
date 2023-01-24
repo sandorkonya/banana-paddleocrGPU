@@ -1,0 +1,11 @@
+# This file is used to verify your http server acts as expected
+# Run it with `python3 test.py``
+
+import requests
+
+#small rd circle in base64
+model_inputs = {'imagedata': 'data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAkBJREFUSEu9lb1uE0EQx/8zi0ksRREfIfadrbOhIFWEqEDiFSLoeQFEQUQHEgUUSIiWNEg0NOmRkoZHoAMaBI3FJd6zpSggk5CEZGfQnXORY/sSY1tsdbe7M7/5XsIJq1atTk7K7iMF3QcwCwIl1xUCIITipbcWvSHAZalpC3SttXI5z+w+kME8nRPQhPaV1x2C/mSo0qof2juEBHxs9QBsxb8L6DLPOsCc5F/H2R+CbLCK4evlWv1Tp9QxgK14z5HTJzzTY8hAJGkaqKPbpdCupAJHgMTynCwPqzxVKA0D2ee5cr3+Ld5LAHHMjXG/2cvM1UAeHEGsET+MkgAngHrgfTYFNz9wzE/B6S4Bm7TkhY1FiktxgvZ2uDAe6zu8gB9GRFFQfIqL+iyrFP8pNh2XtcWglt4kG3gN9l1hWEWZcgJI07yLAcK+69two0LFmg2yFU/HVT3dBok1e/8BEHiOfcejhqOfvFq2cQ5q7Lvq2AEOcM0zb2PAPTovrynff2IOC9YfDLdl5kgBE1W8g3EnWg7HxeGo8FfMjFvA2fF4oVsEaZnFUmiXEoACHAXewVj6QQGJzLYfRlNHwy7+WL9cusaQj6POJLEGufz+9KWvG7+OAeKfRlBYEOYVLg4x+NqWg0muFL83az0PTrqxXipdZSNf6IIwTQ6Wkzjm2uLtXH7fSy3PBKQHUVB8paAHNKWgKQG6W9EhVgrdIVHQwzih/Ur61CHXKBduiOHHAG5BMd1WQpsKvFdHL9KnMatf/gLruuporigrPwAAAABJRU5ErkJggg=='}
+
+res = requests.post('http://localhost:8000/', json = model_inputs)
+
+print(res.json())

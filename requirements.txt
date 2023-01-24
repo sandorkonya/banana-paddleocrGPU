@@ -1,0 +1,6 @@
+sanic==22.6.2
+accelerate
+timm
+pillow
+torch
+torchvision
