@@ -7,7 +7,7 @@
 #FROM paddlepaddle/paddle:2.4.0-gpu-cuda11.2-cudnn8.1-trt8.0
 #FROM paddlepaddle/paddle:2.4.0-gpu-cuda10.2-cudnn7.6-trt7.0
 #FROM paddlepaddle/paddle:2.4.1-gpu-cuda11.7-cudnn8.4-trt8.4
-FROM pytorch/pytorch:1.9.0-cuda10.2-cudnn7-runtime
+FROM pytorch/pytorch:1.8.1-cuda10.2-cudnn7-runtime
 
 WORKDIR /
 
