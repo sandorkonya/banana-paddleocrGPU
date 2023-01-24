@@ -3,4 +3,3 @@ accelerate
 pillow
 torch
 paddleocr>=2.0.1
-opencv-python-headless
