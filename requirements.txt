@@ -2,4 +2,4 @@ sanic==22.6.2
 accelerate
 pillow
 torch
-paddleocr>=2.0.1
+paddleocr
