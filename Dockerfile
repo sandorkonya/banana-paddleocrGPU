@@ -1,7 +1,7 @@
 # Must use a Cuda version 11+
-FROM pytorch/pytorch:1.11.0-cuda11.3-cudnn8-runtime
+#FROM pytorch/pytorch:1.11.0-cuda11.3-cudnn8-runtime
 #FROM pytorch/pytorch:1.9.1-cuda11.1-cudnn8-runtime
-#FROM pytorch/pytorch:1.13.1-cuda11.6-cudnn8-runtime
+FROM pytorch/pytorch:1.13.1-cuda11.6-cudnn8-runtime
 
 WORKDIR /
 
@@ -12,9 +12,9 @@ RUN apt-get update && apt-get install -y git
 # Install python packages
 RUN pip3 install --upgrade pip
 # Install PaddleGPU from https://www.paddlepaddle.org.cn/documentation/docs/en/install/pip/linux-pip_en.html
-RUN pip3 install paddlepaddle-gpu==2.4.1 -f https://www.paddlepaddle.org.cn/whl/linux/mkl/avx/stable.html
 ADD requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt
+RUN pip3 install paddlepaddle-gpu==2.4.1.post117 -f https://www.paddlepaddle.org.cn/whl/linux/mkl/avx/stable.html
 
 # We add the banana boilerplate here
 ADD server.py .
