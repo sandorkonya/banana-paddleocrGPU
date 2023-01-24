@@ -13,7 +13,6 @@ WORKDIR /
 # Install git
 RUN apt-get update && apt-get install -y git
 #RUN apt-get install libgl1 libsm6 libxext6 libglib2.0-0 -y
-RUN locate libpython3.10.so.1.0
 RUN apt-get install libpython3.10-dev
 
 # Install python packages
