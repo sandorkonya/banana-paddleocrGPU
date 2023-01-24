@@ -7,18 +7,19 @@ FROM pytorch/pytorch:1.13.1-cuda11.6-cudnn8-runtime
 #FROM paddlepaddle/paddle:2.4.0-gpu-cuda11.2-cudnn8.1-trt8.0
 #FROM paddlepaddle/paddle:2.4.0-gpu-cuda10.2-cudnn7.6-trt7.0
 #FROM paddlepaddle/paddle:2.4.1-gpu-cuda11.7-cudnn8.4-trt8.4
-#FROM pytorch/pytorch:1.8.1-cuda10.2-cudnn7-runtime
 
 WORKDIR /
 
 # Install git
 RUN apt-get update && apt-get install -y git
 #RUN apt-get install libgl1 libsm6 libxext6 libglib2.0-0 -y
+RUN locate libpython3.10.so.1.0
+RUN apt-get install libpython3.10-dev
 
 # Install python packages
 RUN pip3 install --upgrade pip
 # Install PaddleGPU from https://www.paddlepaddle.org.cn/documentation/docs/en/install/pip/linux-pip_en.html
-RUN pip3 install paddlepaddle-gpu==2.4.1.post116 -f https://www.paddlepaddle.org.cn/whl/linux/mkl/avx/stable.html
+RUN pip3 install paddlepaddle-gpu==2.3.2.post116 -f https://www.paddlepaddle.org.cn/whl/linux/mkl/avx/stable.html
 
 ADD requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt
