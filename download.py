@@ -8,9 +8,13 @@ import subprocess
 
 def download_model():
     
-    out = subprocess.run("nvidia-smi", shell=True)
     print("##########", out,"#############")    
-    out = subprocess.run("nvcc --version", shell=True)
+    result = subprocess.run(['nvidia-smi'], capture_output=True, text=True)
+    print(result.stdout)
+    print(result.stderr)
+    result = subprocess.run(['nvcc', ' --version'], capture_output=True, text=True)
+    print(result.stdout)
+    print(result.stderr)
     print("##########", out,"#############")
 
     paddle.utils.run_check()
