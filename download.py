@@ -4,6 +4,7 @@
 # In this example: 
 from paddleocr import PaddleOCR
 import paddle
+import subprocess
 
 def download_model():
     
