@@ -20,7 +20,7 @@ RUN apt-get install libgl1 libsm6 libxext6 libglib2.0-0 -y
 # Install python packages
 RUN pip3 install --upgrade pip
 # Install PaddleGPU from https://www.paddlepaddle.org.cn/documentation/docs/en/install/pip/linux-pip_en.html
-RUN pip3 install paddlepaddle-gpu==2.1.1.post112 -f https://www.paddlepaddle.org.cn/whl/linux/mkl/avx/stable.html
+RUN pip3 install paddlepaddle-gpu==2.3.1.post112 -f https://www.paddlepaddle.org.cn/whl/linux/mkl/avx/stable.html
 
 ADD requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt
