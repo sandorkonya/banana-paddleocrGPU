@@ -7,7 +7,8 @@
 #FROM paddlepaddle/paddle:2.4.0-gpu-cuda11.2-cudnn8.1-trt8.0
 #FROM paddlepaddle/paddle:2.4.0-gpu-cuda10.2-cudnn7.6-trt7.0
 #FROM paddlepaddle/paddle:2.4.1-gpu-cuda11.7-cudnn8.4-trt8.4
-FROM nvidia/cuda:11.2.0-cudnn8-runtime-ubuntu18.04
+#FROM nvidia/cuda:11.2.0-cudnn8-runtime-ubuntu18.04
+FROM pytorch/pytorch:1.12.1-cuda11.3-cudnn8-devel
 
 WORKDIR /
 
