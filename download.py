@@ -7,9 +7,14 @@ import paddle
 
 def download_model():
     
+    out = subprocess.run("nvidia-smi", shell=True)
+    print("##########", out,"#############")
+    
     paddle.utils.run_check()
     # do a dry run of loading the huggingface model, which will download weights
     model = PaddleOCR(use_angle_cls=False, lang="en",use_gpu=True)
 
 if __name__ == "__main__":
     download_model()
+
+    
