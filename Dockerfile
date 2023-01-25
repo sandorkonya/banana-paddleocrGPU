@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y git
 # Install python packages
 RUN pip3 install --upgrade pip
 # Install PaddleGPU from https://www.paddlepaddle.org.cn/documentation/docs/en/install/pip/linux-pip_en.html
-RUN pip3 install paddlepaddle-gpu==2.4.0rc0.post111 -f https://www.paddlepaddle.org.cn/whl/linux/mkl/avx/stable.html
+RUN pip3 install paddlepaddle-gpu==2.3.2.post111 -f https://www.paddlepaddle.org.cn/whl/linux/mkl/avx/stable.html
 
 ADD requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt
