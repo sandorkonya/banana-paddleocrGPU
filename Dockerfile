@@ -7,8 +7,6 @@ RUN apt-get update && apt-get install -y git
 
 # Install python packages
 RUN pip3 install --upgrade pip
-# Install PaddleGPU from https://www.paddlepaddle.org.cn/documentation/docs/en/install/pip/linux-pip_en.html
-#RUN python3 -m pip install paddlepaddle-gpu==2.4.2.post117 -f https://www.paddlepaddle.org.cn/whl/linux/mkl/avx/stable.html
 
 ADD requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt
@@ -17,7 +15,6 @@ RUN pip3 install -r requirements.txt
 ADD server.py .
 
 # Add your model weight files 
-# (in this case we have a python script)
 ADD download.py .
 RUN python3 download.py
 
