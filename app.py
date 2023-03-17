@@ -21,8 +21,8 @@ def inference(model_inputs:dict) -> dict:
         return {'message': "No imagedata provided"}
 
     # Assuming imagedata is the string value with 'data:image/jpeg;base64,' we remove the first 23 char
-    image = Image.open(BytesIO(base64.decodebytes(bytes(imagedata[23:], "utf-8"))))
-    #image = Image.open(BytesIO(base64.b64decode(imagedata))).convert("RGB")    
+    #image = Image.open(BytesIO(base64.decodebytes(bytes(imagedata[23:], "utf-8"))))
+    image = Image.open(BytesIO(base64.b64decode(imagedata))).convert("RGB")    
     
     result = model.ocr(np.asarray(image), cls=True)
     
