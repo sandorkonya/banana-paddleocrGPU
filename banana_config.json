@@ -1,7 +1,7 @@
 {
   "name": "PaddleOCR GPU",
   "category": "Computer Vision",
-  "example_input": {'imagedata': "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAACSgAAASwCAYA..." },
-  "example_output": { [[[[[52.0, 16.0], [129.0, 16.0], [129.0, 34.0], [52.0, 34.0]  ], ["Language", 0.9980887174606323]] ... ]]  },
+  "example_input": {'imagedata': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAACSgAAASwCAYA...' },
+  "example_output": { [ [[52.0, 16.0], [129.0, 16.0], [129.0, 34.0], [52.0, 34.0]  ], ["Language", 0.9980887174606323] ] },
   "version": "1"
 }
